@@ -89,7 +89,7 @@
     
     
     <!-- Add support for reading web resources: css, images, js, etc ... -->
-    <!--define location of images, .css, .js-->
+    <!--define location of images, .css, .js => Tut1-285-->
     <mvc:resources mapping="/resources/**" location="/resources/"></mvc:resources>
     
     

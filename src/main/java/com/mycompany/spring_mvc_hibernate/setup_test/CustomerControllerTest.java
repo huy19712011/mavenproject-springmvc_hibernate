@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author huynq
  */
 @Controller
-@RequestMapping("/customer")
-public class CustomerController {
+@RequestMapping("/customertest")
+public class CustomerControllerTest {
 
     @RequestMapping("/list")
     public String listCustomers(Model theModel) {

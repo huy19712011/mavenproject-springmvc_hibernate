@@ -27,7 +27,7 @@
             <div id="content">
                 
                 <input type="button" value="Add Customer"
-                       onclick="window.location.href='shwoFormForAdd'; return false"
+                       onclick="window.location.href='showFormForAdd'; return false"
                        class="add-button" />
                 
                 <table>
@@ -40,7 +40,7 @@
                     
                     <c:forEach var="tempCustomer" items="${customers}">
                         <!--loop over and print our customers-->
-                        <c:url var="updateLink" value="/customer/showFormUpdate">
+                        <c:url var="updateLink" value="/customer/showFormForUpdate">
                             <c:param name="customerId" value="${tempCustomer.id}"/>
                         </c:url>
                         <tr>

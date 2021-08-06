@@ -13,7 +13,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
+//import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
@@ -75,6 +75,29 @@ public class CustomerDAOImpl implements CustomerDAO {
         Customer theCustomer = currentSession.get(Customer.class, theId);
 
         return theCustomer;
+
+    }
+
+    @Override
+    public void deleteCustomer(int theId) {
+
+        // get current hibernate session
+        Session currentSession = sessionFactory.getCurrentSession();
+
+        // delete object with primary key
+/*
+    // Using hibernate delete()
+*/
+        //currentSession.delete(getCustomer(theId));
+        //currentSession.delete(currentSession.get(Customer.class, theId));
+
+/*
+    // Using Hibernate query
+*/
+        Query theQuery
+                = currentSession.createQuery("delete from Customer where id=:customerId");
+        theQuery.setParameter("customerId", theId);
+        theQuery.executeUpdate();
 
     }
 
